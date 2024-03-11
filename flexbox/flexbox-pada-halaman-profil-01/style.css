@@ -1,0 +1,137 @@
+body {
+    font-family: "Quicksand" sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    color: #00a2c6;
+}
+
+footer {
+    padding: 20px;
+    color: white;
+    background-color: #00a2c6;
+    text-align: center;
+    font-weight: bold;
+}
+
+header {
+    display: inline;
+}
+
+nav a {
+    font-size: 18px;
+    font-weight: 400;
+    /* menghilangkan undeline anchor */
+    text-decoration: none;
+    color: white;
+}
+
+/* menabahkan hover */
+nav a:hover {
+    font-weight: bold;
+}
+
+.profile header {
+    text-align: center;
+}
+
+/* mengubah dimensi gambar */
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    /* mempertahankan rasio gambar */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* mengubah dimensi logo */
+.profile img {
+    width: 200px;
+}
+
+/* properti card */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* restyling header dengan elemen h1 dan p */
+.jumbotron {
+    font-size: 20px;
+    padding: 60px;
+    background-color: #00c8eb;
+    text-align: center;
+    color: white;
+}
+
+/* menambahkan flex navigasi */
+nav ul {
+    padding-inline: 4rem;
+    display: flex;
+    gap: 2rem; /* memberi celah antar navigasi */
+}
+
+/* restyling nav li */
+nav li {
+    list-style-type: none; /*list-style-type dengan nilai none akan menghilangkan tanda titik yang dihasilkan bagi setiap item pada list.*/
+}
+/* menambah color nav */
+nav {
+    background-color: #00a2c6;
+    padding: 5px;
+
+    /* properti position dengan nilai sticky */
+    position: sticky;
+    top: 0; /* Nilai top: 0 diperlukan agar elemen navigasi selalu berada di atas jendela browser saat user melakukan scrolling. */
+}
+
+/* flexbox pada elemen main */
+main {
+    padding: 20px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* menerapkan flex pada setiap child content */
+#content {
+    flex: 5;
+
+    display: flex;
+
+    flex-flow: column nowrap;
+    gap: 1rem 2rem; /* jarak vertikal dan horizontal */
+}
+
+aside {
+    flex: 1;
+}
+
+/* menerapkan box-sizing ke semua elemen */
+* {
+    box-sizing: border-box;
+}
+
+/* styling ukuran viewport dengan media query dengan aturan Perangkat dengan lebar layar 1200px dan di bawahnya */
+@media screen and (max-width: 1200px) {
+    main {
+        flex-flow: column nowrap; /* ditampilkan secara vertikal */
+    }
+
+    main aside {
+        align-self: center; /* card yang ditampilkan tidak terlalu lebar */
+    }
+}
+
+/* styling ukuran viewport dengan media query dengan aturan Perangkat dengan lebar layar 768px dan di bawahnya */
+@media screen and (max-width: 768px) {
+    nav ul {
+        justify-content: center; /* navigation akan ditampilkan di tengah */
+    }
+
+    main aside {
+        align-self: stretch; /* card akan memenuhi container */
+    }
+}
